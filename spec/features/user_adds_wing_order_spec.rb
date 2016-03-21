@@ -20,7 +20,7 @@ feature "user adds wing order" do
     expect(page).to have_content("Boston")
     expect(page).to have_content("MA")
     expect(page).to have_content("100")
-    expect(page).to have_content("Ranch")
+    expect(page).to have_content("true")
     expect(page).to have_content("Honey BBQ")
     expect(page).to have_content("Sweet Chili")
   end
