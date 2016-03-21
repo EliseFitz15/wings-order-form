@@ -13,8 +13,6 @@ class WingOrdersController < ApplicationController
   def create
     @wing_order = WingOrder.new(wing_order_params)
     @wing_order.flavors = Flavor.where(id: params[:wing_order][:flavors])
-    @wing_order.ranch_dressing = include_ranch_dressing?
-    binding.pry
     if @wing_order.save
       flash[:notice] = "Wing order created!"
       redirect_to wing_orders_path
@@ -60,9 +58,5 @@ class WingOrdersController < ApplicationController
       :quantity,
       :ranch_dressing
     )
-  end
-
-  def include_ranch_dressing?
-    params[:wing_order][:ranch_dressing] == "1"
   end
 end
