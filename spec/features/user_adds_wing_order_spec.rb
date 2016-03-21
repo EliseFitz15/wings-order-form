@@ -11,7 +11,7 @@ feature "user adds wing order" do
     fill_in "City", with: "Boston"
     select "Massachusetts", from: "State"
     choose "100 wings"
-    # check "Add Ranch Dressing"
+    check "Add Ranch Dressing"
     check "Honey BBQ"
     check "Sweet Chili"
     click_button "Place Order"
