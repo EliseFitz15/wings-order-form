@@ -35,7 +35,8 @@ class WingOrdersController < ApplicationController
   def update
     @wing_order = WingOrder.find(params[:id])
     @wing_order.update_attributes(wing_order_params)
-    @wing_order.flavors = Flavor.where(id: params[:wing_order][:flavors])
+    @wing_order.flavors = Flavor.where(id: params[:wing_order][:flavor_ids])
+
     if @wing_order.save
       flash[:notice] = "Wing order updated!"
       redirect_to wing_orders_path
