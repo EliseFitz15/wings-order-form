@@ -27,7 +27,7 @@
 
   <div class="row">
     <%= f.label :flavors, "Flavors" %>
-    <%= f.collection_check_boxes(:flavors, @flavor_collection, :id, :name) %>
+    <%= f.collection_check_boxes(:flavor_ids, @flavor_collection, :id, :name) %>
   </div>
 
   <div class="row actions">
